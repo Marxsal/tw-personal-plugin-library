@@ -1,0 +1,32 @@
+[
+    {
+        "title": "$:/plugins/bimlas/kin-filter",
+        "name": "kin-filter",
+        "author": "bimlas",
+        "core-version": ">=5.1.18",
+        "description": "Kin filter: Recursively looking for kinship between tiddler titles",
+        "plugin-type": "plugin",
+        "source": "https://gitlab.com/bimlas/tw5-kin-filter",
+        "version": "1.0.0",
+        "list": "README/syntax README/examples",
+        "dependents": "",
+        "type": "application/json",
+        "requires-reload": "yes"
+    },
+    {
+        "name": "Relink",
+        "title": "$:/plugins/flibbles/relink",
+        "description": "Flexibility when relinking renamed tiddlers",
+        "author": "Flibbles",
+        "version": "2.1.0",
+        "core-version": ">=5.1.22",
+        "source": "https://github.com/flibbles/tw5-relink",
+        "demo": "http://flibbles.github.io/tw5-relink/",
+        "list": "readme configuration license",
+        "dependents": "",
+        "plugin-type": "plugin",
+        "type": "application/json",
+        "readme": "When renaming a tiddler, Relink can update the fields, filters, and widgets\nof all other tiddlers. However, it works through whitelisting.\n\nIt's already configured to update tiddler titles for all core widgets, filters,\nand fields, but the whitelists can be customized for each of this in the\nconfiguration panel.\n\nSee <a href={{$:/plugins/flibbles/relink!!source}}>the tw5-relink website</a> for more details and examples.\n",
+        "requires-reload": "yes"
+    }
+]
