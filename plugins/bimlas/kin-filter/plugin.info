@@ -1,0 +1,11 @@
+{
+	"title": "$:/plugins/bimlas/kin-filter",
+	"name": "kin-filter",
+"author": "bimlas",
+"core-version": ">=5.1.18",
+	"description": "Kin filter: Recursively looking for kinship between tiddler titles",
+"plugin-type": "plugin",
+"source": "https://gitlab.com/bimlas/tw5-kin-filter",
+"version": "1.0.0",
+	"list": "README/syntax README/examples"
+}
