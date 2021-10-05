@@ -43,5 +43,19 @@
         "type": "application/json",
         "readme": "\nThis simple tool creates a standard expandable TOC rooted on the name of the current tiddler. Unlike a regular TOC, it can be searched. The first time you use it, you may need to click on the large \"X\" to set up the TOC. After that you can type your search term in the provided box and either type `<enter>` or click the search (<span class=\"mas-toc-search-icon\">{{$:/core/images/advanced-search-button}}</span>) icon. The TOC will be searched, and any branches matching the search term will be opened.\n\nThis plugin requires Bimlas' `kin-filter` plugin, available [ext[here|https://gitlab.com/bimlas/tw5-kin-filter]].\n\nTo use, just insert `<<search-and-toc>>` into a tiddler that you wish to form the root of a new searchable tree. The first time you use it you will need to initialize it by pressing `<esc>` or clicking the large \"X\".\n",
         "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/tgrosinger/tw5-checklist",
+        "description": "Checklist Plugin",
+        "author": "Tony Grosinger",
+        "version": "0.0.15",
+        "core-version": ">=5.0.9",
+        "source": "https://github.com/tgrosinger/tw5-checklist",
+        "plugin-type": "plugin",
+        "list": "readme Usage Configuration",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "This plugin provides a simple checklist which does not create a new tiddler for\neach task. Features include:\n\n[x] Check and uncheck items\n[x] Simple, no configuration necessary\n[x] Easily editable, and easy to read in edit view\n[x] Add new list items without using edit mode\n[x] Move completed items to bottom of list\n\n[[Source code|https://github.com/tgrosinger/tw5-checklist]]\n",
+        "requires-reload": "yes"
     }
 ]
