@@ -1,0 +1,66 @@
+_toc: hit
+created: 20210311181204933
+creator: MAS
+keep-rev: 5
+modified: 20211005031048002
+modifier: MAS
+tags: $:/tags/Macro
+title: $:/plugins/MAS/TOC-Search/Macros/Search Box
+type: text/vnd.tiddlywiki
+
+\whitespace trim
+\define actions-toc-find() 
+<!-- $action-setfield $tiddler="whoami" text="$(mas-search-tiddler)$" / -->
+<$action-setfield $tiddler="$(mas-search-tiddler-results)$" list="" $timestamp="no" />
+
+<$list filter="[kin::to:<currentTiddler>search{$(mas-search-tiddler)$}kin::from:[]]" variable=term>
+<$action-listops $tiddler="$(mas-search-tiddler-results)$" $subfilter="[<term>]"/>
+<$vars stem={{{ [<term>addprefix[-]addsuffix<qnum>] }}} >
+
+<$action-setfield 
+$tiddler={{{[[$(currentTiddler)$]addprefix[$:/state/toc/]addsuffix<stem>]}}}
+text="open"/>
+
+</$list>
+</$vars>
+\end
+
+\define actions-toc-reset()
+<$action-setfield $tiddler="$(mas-search-tiddler-results)$" list="" $timestamp="no" />
+<$list filter="[prefix[$:/state/toc/$(currentTiddler)$]]">
+  <$action-deletetiddler $tiddler=<<currentTiddler>> />
+</$list>
+<$list filter="[kin::to:<currentTiddler>]" variable=term>
+<!-- $action-setfield $tiddler=<<term>> _toc="hit" $timestamp="no" -->
+<$action-listops $tiddler="$(mas-search-tiddler-results)$" $subfilter="[<term>]"/>
+</$list>
+\end
+
+\define mas-search-box()
+<div class="tc-sidebar-lists tc-sidebar-search">
+
+<div class="tc-search">
+<$keyboard key="((toc-reset))" actions="""<<actions-toc-reset>>""">
+<$keyboard key="((toc-find))" actions="""<<actions-toc-find>>""">
+<$edit-text tiddler="$(mas-search-tiddler)$" type="search" tag="input" focus={{$:/config/Search/AutoFocus}}  class="tc-popup-handle"/>
+</$keyboard>
+</$keyboard>
+<$button tooltip="Search TOC" class="tc-btn-invisible" actions=<<actions-toc-find>>>
+{{$:/core/images/advanced-search-button}}
+</$button>
+<$button tooltip="Reset TOC " class="tc-btn-invisible" actions=<<actions-toc-reset>>>
+{{$:/core/images/close-button}}
+</$button>
+</div>
+
+</div>
+\end
+\define old-code()
+<$reveal tag="div" class="tc-block-dropdown-wrapper" state="$tid$" type="nomatch" text="">
+
+<$list filter="[{$tid$}minlength{$:/config/Search/MinLength}limit[1]]" emptyMessage="""<div class="tc-search-results">{{$:/language/Search/Search/TooShort}}</div>""" variable="listItem">
+
+</$list>
+
+</$reveal>
+\end

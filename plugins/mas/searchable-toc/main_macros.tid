@@ -1,0 +1,22 @@
+created: 20210930182416469
+creator: MAS
+keep-rev: 5
+modified: 20211005031130508
+modifier: MAS
+tags: $:/tags/Macro
+title: $:/plugins/MAS/TOC-Search/Macros
+type: text/vnd.tiddlywiki
+
+\define search-and-toc(tid)
+<$vars 
+qnum="""$(qualify)$"""
+mas-search-tiddler="""$:/state/mas/search$(qualify)$"""
+mas-search-tiddler-results="""$:/state/mas/search$(qualify)$-list"""
+>
+<$macrocall $name="mas-search-box" />
+<hr/>
+<div class="mas-taglist">
+<$macrocall $name="toc-selective-expandable" tag=<<currentTiddler>> sort="]:intersection[list<mas-search-tiddler-results>]+[sort[]"  />
+</div>
+</$vars>
+\end

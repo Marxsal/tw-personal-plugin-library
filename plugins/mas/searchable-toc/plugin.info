@@ -1,0 +1,12 @@
+{
+	"name": "Searchable TOC",
+	"title": "$:/plugins/MAS/TOC-Search",
+	"description": "Creates a searchable TOC",
+	"author": "marxsal",
+	"version": "0.0.1",
+	"core-version": ">=5.1.23",
+	"source": "https://marxsal.github.io/tw-personal-plugin-library",
+	"list": "readme",
+	"dependents": "",
+	"plugin-type": "plugin"
+}

@@ -1,0 +1,12 @@
+created: 20211005015439529
+modified: 20211005031320885
+tags: 
+title: $:/plugins/MAS/TOC-Search/readme
+type: text/vnd.tiddlywiki
+
+
+This simple tool creates a standard expandable TOC rooted on the name of the current tiddler. Unlike a regular TOC, it can be searched. The first time you use it, you may need to click on the large "X" to set up the TOC. After that you can type your search term in the provided box and either type `<enter>` or click the search (<span class="mas-toc-search-icon">{{$:/core/images/advanced-search-button}}</span>) icon. The TOC will be searched, and any branches matching the search term will be opened.
+
+This plugin requires Bimlas' `kin-filter` plugin, available [ext[here|https://gitlab.com/bimlas/tw5-kin-filter]].
+
+To use, just insert `<<search-and-toc>>` into a tiddler that you wish to form the root of a new searchable tree. The first time you use it you will need to initialize it by pressing `<esc>` or clicking the large "X".

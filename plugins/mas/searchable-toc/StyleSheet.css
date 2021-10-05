@@ -1,0 +1,11 @@
+.mas-taglist li.toc-item {
+list-style-type: none ;
+}
+.mas-taglist  ol.tc-toc {
+padding-left: 10px;
+}
+
+span.mas-toc-search-icon .tc-image-button {
+height: 1em ;
+vertical-align: -2px ;
+}
