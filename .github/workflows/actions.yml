@@ -20,5 +20,5 @@ jobs:
       - uses: tiddly-gittly/tw5-plugin-packer@v0.0.5
         with:
           source: |
-            "./plugins"
+            "plugins/bimlas/kin-filter"
           output: "./plugins-JSON"
