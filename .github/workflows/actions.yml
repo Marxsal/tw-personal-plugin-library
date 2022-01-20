@@ -53,7 +53,7 @@ jobs:
           echo "Checking status of output before branch switch."
           ls -lR  output
           git checkout gh-pages
-          cp output/index2.html index.html
+          cp output/index.html index.html
           rsync -av output/recipes/ --delete recipes
           #mv recipes2 recipes
           echo "Getting status before adding anything."
