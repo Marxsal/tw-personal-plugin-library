@@ -45,6 +45,8 @@ jobs:
         run: |
           git config --local user.email "somename@example.com"
           git config --local user.name "github-actions[bot]"
+          git checkout gh-pages
+          cp index2.html index.html
           git add index.html
           git commit -m "Updating library"
       - name: Push changes
