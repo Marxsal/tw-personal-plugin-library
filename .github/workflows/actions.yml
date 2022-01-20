@@ -57,7 +57,7 @@ jobs:
           git add recipes/
           git add index.html
           git status
-          #git commit -m "Updating library"
+          git commit -m "Updating library"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
