@@ -50,10 +50,12 @@ jobs:
         run: |
           git config --local user.email "somename@example.com"
           git config --local user.name "github-actions[bot]"
+          echo "Checking status of recipes before branch switch."
+          ls -lR         
           mv recipes recipes2
           ls -l
           git checkout gh-pages
-          ls -l
+          ls -lA
           echo "Check content of recipes2"
           ls -lR recipes2
           echo "Was there anything?"
