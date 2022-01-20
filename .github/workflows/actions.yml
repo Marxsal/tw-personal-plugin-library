@@ -24,3 +24,4 @@ jobs:
             plugins/bimlas/kin-filter
           output: plugins-JSON
       - run: git add -u
+      - run: git status
