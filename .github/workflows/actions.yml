@@ -53,12 +53,15 @@ jobs:
           echo "Checking status of output before branch switch."
           ls -lR  output
           git checkout gh-pages
-          git rm --cached index.html
+          #git rm --cached index.html
           cp output/index.html index.html
           rsync -av output/recipes/ --delete recipes
           #mv recipes2 recipes
-          echo "Long list from git re status."
-          git ls-files -v 
+          #echo "Long list from git re status."
+          #git ls-files -v 
+          echo "Compare two index files."
+          ls -l output/index.html
+          ls -l index.html
           echo "Getting status before adding anything."
           git status
           echo "Finally adding index and recipes."
