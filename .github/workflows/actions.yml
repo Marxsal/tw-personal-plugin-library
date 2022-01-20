@@ -51,16 +51,20 @@ jobs:
           git config --local user.email "somename@example.com"
           git config --local user.name "github-actions[bot]"
           mv recipes recipes2
+          ls -l
           git checkout gh-pages
+          ls -l
           cp index2.html index.html
-          rm -rf recipes
-          mv recipes2 recipes
+          rsync -av recipes2/ --delete recipes
+          #mv recipes2 recipes
           git status --ignored
           git status
-          git add recipes/*
           git add index.html
+          cd recipes
+          git add .
+          echo "Final status. Maybe"
           git status
-          git commit -m "Updating library"
+          #git commit -m "Updating library"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
