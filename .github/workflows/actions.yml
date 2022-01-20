@@ -36,5 +36,6 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: npm install
-      - run: node ./tiddlywiki.js editions/pluginlibrary --build library
+      - run: npm install -g tiddlywiki
+      - run: tiddlywiki editions/pluginlibrary --build library
+      - run: ls -l 
