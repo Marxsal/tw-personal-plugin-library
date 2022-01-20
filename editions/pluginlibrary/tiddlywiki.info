@@ -9,7 +9,7 @@
 	],
 	"build": {
 		"library": [
-"--output","./",
+"--output","output",
 			"--makelibrary","$:/UpgradeLibrary",
 			"--savelibrarytiddlers","$:/UpgradeLibrary","[prefix[$:/]] -[prefix[$:/plugins/tiddlywiki/]] -[prefix[$:/themes/tiddlywiki/]] -[prefix[$:/languages/]] -[[$:/plugins/tiddlywiki/upgrade]] -[[$:/plugins/tiddlywiki/translators]] -[[$:/plugins/tiddlywiki/pluginlibrary]] -[[$:/plugins/tiddlywiki/jasmine]]","recipes/library/tiddlers/","$:/UpgradeLibrary/List",
    			"--savetiddler","$:/UpgradeLibrary/List","recipes/library/tiddlers.json",
