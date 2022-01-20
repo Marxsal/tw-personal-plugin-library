@@ -41,6 +41,10 @@ jobs:
           node-version: '14'
       - run: npm install -g tiddlywiki
       - run: tiddlywiki editions/pluginlibrary --build library
+      - name: Check run status
+        run: ls -l
+      - name: Check git status
+        run: git status
       - name: Commit files
         run: |
           git config --local user.email "somename@example.com"
