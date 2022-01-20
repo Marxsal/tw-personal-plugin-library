@@ -24,4 +24,5 @@ jobs:
             plugins/bimlas/kin-filter
           output: plugins-JSON
       - run: git add plugins-JSON/
+      - run: git commit -m "Adding auto generated JSON file."
       - run: git status
