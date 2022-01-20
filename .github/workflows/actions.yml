@@ -49,10 +49,15 @@ jobs:
         run: |
           git config --local user.email "somename@example.com"
           git config --local user.name "github-actions[bot]"
+          mv recipes recipes2
           git checkout gh-pages
           cp index2.html index.html
+          rm -rf recipes
+          mv recipes2 recipes
+          git add recipes/
           git add index.html
-          git commit -m "Updating library"
+          git status
+          #git commit -m "Updating library"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
