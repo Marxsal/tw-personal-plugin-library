@@ -44,14 +44,14 @@ jobs:
       - name: Check status so far 
         run: | 
           ls -l 
-          ls -l recipes/
+          ls -lR recipes/
           git status
       - name: Commit files
         run: |
           git config --local user.email "somename@example.com"
           git config --local user.name "github-actions[bot]"
           echo "Checking status of recipes before branch switch."
-          ls -lR         
+          ls -lR  recipes    
           mv recipes recipes2
           ls -l
           git checkout gh-pages
@@ -70,7 +70,8 @@ jobs:
           git add index.html
           cd recipes
           git add .
-          echo "Final status. Maybe"
+          cd ..
+          echo "Final status. Maybe..."
           git status
           #git commit -m "Updating library"
       - name: Push changes
