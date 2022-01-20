@@ -22,4 +22,4 @@ jobs:
         with:
           source: |
             plugins/bimlas/kin-filter
-          output: ./pluginsJSON
+          output: plugins-JSON
