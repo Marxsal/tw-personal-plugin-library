@@ -51,5 +51,5 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.SECRET_TOKEN }}
-          branch: gh_pages
+          branch: gh-pages
       - run: ls -l 
