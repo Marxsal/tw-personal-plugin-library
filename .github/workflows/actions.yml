@@ -41,10 +41,11 @@ jobs:
           node-version: '14'
       - run: npm install -g tiddlywiki
       - run: tiddlywiki editions/pluginlibrary --build library
-      - name: Check run status
-        run: ls -l
-      - name: Check git status
-        run: git status
+      - name: Check status so far 
+        run: | 
+          ls -l 
+          ls -l recipes/
+          git status
       - name: Commit files
         run: |
           git config --local user.email "somename@example.com"
@@ -54,7 +55,9 @@ jobs:
           cp index2.html index.html
           rm -rf recipes
           mv recipes2 recipes
-          git add recipes/
+          git status --ignored
+          git status
+          git add recipes/*
           git add index.html
           git status
           git commit -m "Updating library"
