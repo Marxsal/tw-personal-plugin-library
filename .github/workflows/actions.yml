@@ -51,19 +51,15 @@ jobs:
           git config --local user.email "somename@example.com"
           git config --local user.name "github-actions[bot]"
           echo "Checking status of recipes before branch switch."
-          ls -lR  recipes    
           mv recipes recipes2
-          ls -l
+          ls -lR  recipes2    
           git checkout gh-pages
+          echo "Check for invisible files."
           ls -lA
-          echo "Check content of recipes2"
-          ls -lR recipes2
-          echo "Was there anything?"
+          echo "Was there anything invisible?"
           cp index2.html index.html
           rsync -av recipes2/ --delete recipes
           #mv recipes2 recipes
-          echo "Getting status of ignored."
-          git status --ignored
           echo "Getting status before adding anything."
           git status
           echo "Finally adding index and recipes."
