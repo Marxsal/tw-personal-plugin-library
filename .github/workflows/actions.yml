@@ -56,6 +56,8 @@ jobs:
           cp output/index.html index.html
           rsync -av output/recipes/ --delete recipes
           #mv recipes2 recipes
+          echo "Long list from git re status."
+          git ls-files -v 
           echo "Getting status before adding anything."
           git status
           echo "Finally adding index and recipes."
