@@ -39,9 +39,12 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: npm install -g tiddlywiki
-      - run: export TIDDLYWIKI_PLUGIN_PATH=$(pwd)/plugins
-      - run: tiddlywiki editions/pluginlibrary --build library
+      - name: Make plugin library
+        run: | 
+            npm install -g tiddlywiki
+            export TIDDLYWIKI_PLUGIN_PATH=$(pwd)/plugins
+            echo $TIDDLYWIKI_PLUGIN_PATH
+            tiddlywiki editions/pluginlibrary --build library
       - name: Check status so far 
         run: | 
           ls -l 
