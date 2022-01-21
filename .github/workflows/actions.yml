@@ -40,6 +40,7 @@ jobs:
         with:
           node-version: '14'
       - run: npm install -g tiddlywiki
+      - run: export TIDDLYWIKI_PLUGIN_PATH=$(pwd)/plugins
       - run: tiddlywiki editions/pluginlibrary --build library
       - name: Check status so far 
         run: | 
@@ -47,13 +48,12 @@ jobs:
           ls -lR output/
           git status
       - name: Commit files
-        run: |
+        run: | 
           git config --local user.email "somename@example.com"
           git config --local user.name "github-actions[bot]"
           echo "Checking status of output before branch switch."
           ls -lR  output
           git checkout gh-pages
-          #git rm --cached index.html
           echo "List index before copy."
           ls -l index.html
           cp output/index.html index.html
