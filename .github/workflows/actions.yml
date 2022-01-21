@@ -54,6 +54,8 @@ jobs:
           ls -lR  output
           git checkout gh-pages
           #git rm --cached index.html
+          echo "List index before copy."
+          ls -l index.html
           cp output/index.html index.html
           rsync -av output/recipes/ --delete recipes
           #mv recipes2 recipes
