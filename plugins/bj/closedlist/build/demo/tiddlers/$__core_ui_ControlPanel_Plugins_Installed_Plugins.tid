@@ -1,0 +1,7 @@
+caption: {{$:/language/ControlPanel/Plugins/Plugins/Caption}} (<$count filter="[!has[draft.of]plugin-type[plugin]]"/>)
+created: 20160311191939442
+modified: 20160311191940949
+title: $:/core/ui/ControlPanel/Plugins/Installed/Plugins
+type: text/vnd.tiddlywiki
+
+<<plugin-table plugin>>

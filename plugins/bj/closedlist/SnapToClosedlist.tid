@@ -1,0 +1,9 @@
+title: $:/bj/SnapToClosedlist
+
+\rules only table wikilink prettylink
+
+|!Title|!Body|!Tags|!Fields|!Initvals|!Modes|
+|null||||[[$:/bj/SnapToClosedlistInitVals]]|nosave|
+|null||||{"#ext":"png"},{"%title":"((*@pageTitle*))((*@dateTimeShort*)).((*#ext*))"}|nosave|
+|((*@section*))|||{"#ctags":"((*$ctags*))"},{"$ctags":"((*@addsets(#ctags,%extraTags)*))"}|{"$type":"application/json"},{"$ctags":"((*%extraTags*))"},{"$applicationtype":"closedlist"},{"$text":"{\"tiddlers\":{}}"}|append add|
+|((*@section*))->((*@pageTitle*))|[img[((*@csaver(%title,@snap)*))]]\n\n((*%web*))\n\n\n\n((*@note*))||{"#tags2":"((*@alert($tags)*))"}|{"#extraTags":"((*@exists(@extraTags)*??*@extraTags*))"},{"#tags":"((*$tags*))"},{"$tags":"((*@addsets(#tags,#extraTags)*))"},{"$source":"((*@pageRef*))"},{"$clippeddate":"((*@dateTimeShort*))"}|inc add|

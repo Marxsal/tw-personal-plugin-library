@@ -1,0 +1,23 @@
+title:$:/bj/macros/closedlisttimeold
+tags: $:/tags/Macro
+
+\define closedlisttimeold(limit:"100",format:"DDth MMM YYYY",subfilter,dateField:"modified",template) 
+<div class="tc-timeline">
+<$vars currentTag="$tag$">
+<$list filter="[plugin<parentTiddler>$subfilter$eachday[$dateField$]]">
+<$view tiddler=<<parentTiddler>> subtiddler =<<currentTiddler>> field="$dateField$" format="date" template="$format$"/>
+<$vars mysameday=<<getfield tiddler:"<parentTiddler>" subtiddler:"<currentTiddler>" field:"$dateField$" >>>
+<$list filter="[plugin<parentTiddler>$subfilter$sameday:$dateField$<mysameday>]">
+{{||$template$}}
+</$list>
+</$vars>
+</$list>
+</$vars>
+</div>
+\end
+
+
+
+
+
+

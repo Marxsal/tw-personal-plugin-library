@@ -1,0 +1,14 @@
+title: $:/bj/closedlist/listedit
+
+\define parentappend(y) $y$$(parentTiddler)$
+
+<div class="tc-taglist">
+	<$linkcatcher  message="refresh" to=<<parentappend "$:/temp/priv/">>  >
+		<$reveal state=<<parentappend "$:/temp/priv/">> text={{!!title}} type="match"><$link to=""><$view field="title"/></$link></$reveal><$reveal state=<<parentappend "$:/temp/priv/">> text={{!!title}} type="nomatch">
+			<$link><$view field="title"/></$link>
+		</$reveal>
+	</$linkcatcher>
+</div>
+<$reveal state=<<parentappend "$:/temp/priv/">> text={{!!title}} type="match">
+	<$edit-html tiddler=<<parentTiddler>> subtiddler=<<currentTiddler>>mode="block"/>
+</$reveal>

@@ -1,0 +1,12 @@
+title: ListClosedCreate
+
+<$createclip>
+<$button>
+create new List
+<$action-tiddlydo  $tabletid="$:/bj/closedlist" $catname="MakeNewList"/>
+</$button>
+</$createclip>
+<ul><$list filter="[tag<currentTiddler>]" class='btn btn-primary'>
+<li>{{!!title||listtickettemplate}}</li></$list></ul>
+
+

@@ -1,0 +1,11 @@
+title: $:/bj/SnapToClosedlistInitVals
+type: application/x-bclip
+
+#notag=notag
+%extraTags=((*@exists(@extraTags)*??*@extraTags*??*#notag*))
+#text=((*@text*))
+#lines=\n\n
+%onImage=[img[((*@imageURL*))]]\n\n
+#cptext=((*@cptext*))((*@exists(@cptext)*??*#lines*))
+#empty=
+%web=((*#cptext*))((*!@web==#empty*??*@web*??*#text*))

@@ -1,0 +1,8 @@
+caption: Step 1<br>Syncing
+created: 20160311191846646
+modified: 20160311191855495
+tags: $:/tags/GettingStarted
+title: GettingStarted
+type: text/vnd.tiddlywiki
+
+{{$:/core/ui/ControlPanel/Plugins}}

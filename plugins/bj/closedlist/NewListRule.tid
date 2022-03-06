@@ -1,0 +1,8 @@
+title: $:/bj/NewListRule
+
+\rules only table wikilink prettylink 
+
+|!Title|!Body|!Tags|!Fields modifiers|!field initials|!Modes|
+|null|{\"tiddlers\":{}}||{"#applicationtype":"closedlist"},{"#NewList":"NewList"},{ "#title": "((*@newtickettitle(#NewList)*))" }, {"$title": "Draft of '((*#title*))'" }, {"$type":"application/json"}, {"$applicationtype":"((*#applicationtype*))"},{"$ctags":""}, {"$draft.of":"((*#title*))"}, {"$draft.title":"((*#title*))"},{"$tagoptions":"undefined"}||add inc open|
+
+

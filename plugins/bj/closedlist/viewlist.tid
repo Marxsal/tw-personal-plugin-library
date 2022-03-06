@@ -1,0 +1,37 @@
+title: $:/bj/closedlist/ViewTemplate/body/list
+
+<$createclip>
+<$button>
+Dock
+<$action-tiddlydo  $tabletid= "$:/bj/closedlist"  $catname="MakeDock" section=<<currentTiddler>> tags={{!!tagoptions}}/>
+</$button>
+</$createclip>
+<$reveal type="nomatch" state=<<qualify  "$:/state/x">> text="show">
+<$button set=<<qualify "$:/state/x">> setTo="show">by tags</$button>
+
+
+<$list filter="[tag[ListWidget]sort[title]]"/>
+<$vars parentTiddler=<<currentTiddler>>>
+
+<<closedlisttimeold format:"DDth MMM YYYY" dateField:"modified" template:"$:/bj/closedlist/listview">>
+
+</$vars>
+</$reveal>
+<$reveal type="match" state=<<qualify "$:/state/x">> text="show">
+<$button set=<<qualify "$:/state/x">> setTo="hide">all</$button>
+<$vars listTiddler="notag">{{||$:/bj/closedlist/viewtemplate/notag}}</$vars>
+<$list filter="[enlist{!!ctags}]" variable="listTiddler">{{||$:/bj/closedlist/viewtemplate/tags}}</$list>
+
+
+<$vars parentTiddler=<<currentTiddler>> empty="""""">
+<$set name="subtag" filter="[all[current]field:state[notag]]" value="{{!!null}}" emptyValue={{!!state}}>
+
+<$reveal type="match" state="!!state" text="notag">
+<$macrocall $name="closedlisttime" format="DDth MMM YYYY" dateField="modified" template="$:/bj/closedlist/listview" />
+</$reveal>
+<$reveal type="nomatch" state="!!state" text="notag">
+<$macrocall $name="closedlisttime" format="DDth MMM YYYY" dateField="modified" template="$:/bj/closedlist/listviewremovetag" subtag=<<subtag>> />
+</$reveal>
+</$set>
+</$vars>
+</$reveal>

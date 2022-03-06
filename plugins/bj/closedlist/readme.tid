@@ -1,0 +1,8 @@
+title: $:/plugins/bj/closedlist/readme
+
+Enables tiddlers inside plugin type containers to be individually viewed and edited. All contained tiddlers are shown as a list
+
+Needs the typestemplate plugin.
+
+For edit, Needs ckeditor with subtiddler extension and multtid tools ($:/plugins/bj/struc)
+

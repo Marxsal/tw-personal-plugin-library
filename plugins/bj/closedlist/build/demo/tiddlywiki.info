@@ -1,0 +1,14 @@
+{
+	"plugins": [
+		"bj/closedlist"
+	],
+	"themes": [
+		"tiddlywiki/vanilla",
+		"tiddlywiki/snowwhite"
+	],
+		"doNotSave": [
+	],
+	"includeWikis": [
+		"../extlibs"
+	]
+}

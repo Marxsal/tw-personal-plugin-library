@@ -1,0 +1,9 @@
+tags: $:/tags/Stylesheet
+title: $:/bj/closedlist/iframestyle
+type: text/vnd.tiddlywiki
+
+.tc-tagged-clips iframe {
+width:100%;
+height: 65vh;
+}
+

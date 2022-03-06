@@ -1,0 +1,8 @@
+title: $:/bj/WebTextclosedlist
+
+\rules only table wikilink prettylink
+
+|!Title|!Body|!Tags|!Fields|!Initvals|!Modes|
+|null||||[[$:/bj/SnapToClosedlistInitVals]]|nosave|
+|((*@section*))|||{"#ctags":"((*$ctags*))"},{"$ctags":"((*@addsets(#ctags,%extraTags)*))"}|{"$type":"application/json"},{"$ctags":"((*%extraTags*))"},{"$applicationtype":"closedlist"},{"$text":"{\"tiddlers\":{}}"}|append add|
+|((*@section*))->((*@pageTitle*))|((*@onImage*??*%onImage*))((*%web*))\n\n\n\n((*@note*))|||{"#extraTags":"((*@exists(@extraTags)*??*@extraTags*))"},{"#tags":"((*$tags*))"},{"$tags":"((*@addsets(#tags,#extraTags)*))"},{"$source":"((*@pageRef*))"},{"$clippeddate":"((*@dateTimeShort*))"}|inc add|

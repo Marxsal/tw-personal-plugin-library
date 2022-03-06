@@ -1,0 +1,8 @@
+title: $:/bj/closedlist/EditTemplate/body/list
+
+<$reveal tag="div" class="tc-tiddler-body" type="nomatch" state=<<folded-state>> text="hide" retain="yes" animate="yes">
+<$vars parentTiddler=<<currentTiddler>>>
+<$list filter="[all[current]plugintiddlers[]sort[title]]" class='btn btn-primary'>
+{{!!title||$:/bj/closedlist/listedit}}</$list>
+</$vars>
+</$reveal>

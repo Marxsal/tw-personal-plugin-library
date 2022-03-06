@@ -1,0 +1,31 @@
+title: $:/bj/closedlist/listview
+
+\define parentappend(y) $y$$(parentTiddler)$
+
+\define addsubtag-actions()
+<$action-tiddlydo  $tabletid="$:/bj/closedlist" $catname="addtag" subtiddler=<<currentTiddler>> tiddler=<<parentTiddler>> newtag=<<actionTiddler>>/>
+\end
+<div class="tc-taglist">
+<$button  class="tc-btn-invisible">{{$:/core/images/delete-button}}<$bj-action-deletetiddler $tiddler=<<parentTiddler>> $subtiddler=<<currentTiddler>>/></$button>
+<$linkcatcher  message="refresh" to=<<parentappend "$:/temp/priv/">>  >
+<$reveal state=<<parentappend "$:/temp/priv/">> text={{!!title}} type="match">
+    <$link to=""><$view  tiddler=<<parentTiddler>> subtiddler=<<currentTiddler>> field="title"/></$link>
+</$reveal>
+<$reveal state=<<parentappend "$:/temp/priv/">> text={{!!title}} type="nomatch">
+    <$link><$view  tiddler=<<parentTiddler>> subtiddler=<<currentTiddler>> field="title"/></$link>
+</$reveal>
+</$linkcatcher>
+</div>
+
+<$reveal state=<<parentappend "$:/temp/priv/">> text={{!!title}} type="match">
+<$createclip>
+<$droppable actions=<<addsubtag-actions>>>
+	{{$:/core/images/new-button}}
+</$droppable></$createclip>
+    <$transclude tiddler=<<parentTiddler>> subtiddler=<<currentTiddler>>mode="block"/>
+source is <$transclude tiddler=<<parentTiddler>> subtiddler=<<currentTiddler>> field="source"/>
+</$reveal>
+
+
+
+

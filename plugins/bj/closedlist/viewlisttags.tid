@@ -1,0 +1,17 @@
+title: $:/bj/closedlist/viewtemplate/tags
+
+\whitespace trim
+\define addfld(b)
+$(currentTiddler)$$b$
+\end
+
+<$vars parentTiddler=<<addfld "!!state">>>
+<$set name="color" filter="[all[current]field:state<listTiddler>]" value="red" emptyValue="">
+<span class="tc-tag-list-item">
+<$set name="transclusion" value=<<listTiddler>>>
+<$draggable tiddler=<<listTiddler>> tag="scan">
+<$macrocall $name="tag-pill-body" tag=<<listTiddler>> icon={{!!icon}} colour=<<color>> palette={{$:/palette}} element-tag="""$button""" element-attributes="""set= <<parentTiddler>> setTo=<<listTiddler>> tag='span'"""/></$draggable>
+</$set>
+</span>
+</$set>
+</$vars>

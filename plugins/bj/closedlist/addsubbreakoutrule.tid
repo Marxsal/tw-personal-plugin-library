@@ -1,0 +1,6 @@
+title: $:/bj/AddsubBreakoutRule
+type: application/x-bclip
+
+#tags=((*$tags*))
+#mastertags:={{((*@tiddler*))!!tagoptions}}
+$tags=((*@inset(#mastertags,@newtag)*??*@addsets(#tags,@newtag)*??*@abort()*))

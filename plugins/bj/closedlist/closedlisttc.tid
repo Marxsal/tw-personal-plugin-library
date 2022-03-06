@@ -1,0 +1,9 @@
+title: $:/bj/closedlist
+
+|!Category|!Tip|!Tags|!Rule Tid|!Modes|
+|MakeDock|||[[$:/bj/closedlistDockRule]]||
+|MakeNewList|||[[$:/bj/NewListRule]]||
+|addtag|||[[$:/bj/AddsubtagRule]]||
+|removetag|||[[$:/bj/RemovesubtagRule]]||
+
+

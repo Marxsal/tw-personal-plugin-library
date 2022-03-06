@@ -1,0 +1,7 @@
+title: $:/bj/PintoClosedlist
+
+\rules only table wikilink prettylink
+
+|!Title|!Body|!Tags|!Fields modifiers|!field initials|!Modes|
+|((*@section*))|||{"#ctags":"((*$ctags*))"},{"#notag":"notag"},{"#extraTags":"((*@exists(@extraTags)*??*@extraTags*??*#notag*))"},{"$ctags":"((*@addsets(#ctags,#extraTags)*))"},{"$tags":""}|{"$type":"application/json"},{"$ctags":"((*@extraTags*))"},{"$applicationtype":"closedlist"},{"$text":"{\"tiddlers\":{}}"}|append add|
+|((*@section*))->((*@pageTitle*))|[img[((*@onImage*??*@imageURL*??*@largestImgURL*))]]\n\n((*@text*))\n\n((*@exists(@note)*??*@note*))|||{"#tags":"((*$tags*))"},{"#notag":"notag"},{"#extraTags":"((*@exists(@extraTags)*??*@extraTags*??*#notag*))"},{"$tags":"((*#tags*)) ((*#extraTags*))"},{"$source":"((*@pageRef*))"},{"$clippeddate":"((*@dateTimeShort*))"}|inc add|

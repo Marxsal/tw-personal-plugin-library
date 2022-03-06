@@ -1,0 +1,8 @@
+title: $:/bj/closelistclipconfig
+
+!((*@section*))
+|!Category|!Tip|!Tags|!Rule Tid|!Modes|
+|Snippy|Copy||[[$:/bj/WebTextclosedlist]]|note|
+|Snappy|screen shot||[[$:/bj/SnapToClosedlist]]|snap note|
+|Cptext||||cptext|
+|text2note||||text2note|

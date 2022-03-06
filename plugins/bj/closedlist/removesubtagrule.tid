@@ -1,0 +1,9 @@
+title: $:/bj/RemovesubtagRule
+
+\rules only table wikilink prettylink
+
+|!Title|!Body|!Tags|!Fields|!Initvals|!Modes|
+|((*@tiddler*))->((*@subtiddler*))|||{"#tags":"((*$tags*))"},{"$tags":"((*@subtractset(#tags,@tag)*))"}||add append|
+
+
+
