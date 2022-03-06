@@ -1,0 +1,149 @@
+created: 20220207024303361
+modified: 20220306204612410
+tags: 
+title: $:/plugins/mas/dynanotator/ViewTemplate/body
+
+\define click-annotation-actions()
+<$action-setfield $tiddler="$:/temp/dynannotate/demo/annotation-title" $value=<<annotationTiddler>>/>
+\end
+
+\define create-annotation-actions()
+<$action-createtiddler
+	$basetitle={{{ [<currentTiddler>addprefix{$:/plugins/MAS/DynaNotator/config/prefix}addsuffix{$:/plugins/MAS/DynaNotator/config/suffix}] }}}
+	$savetitle={{{ [<currentTiddler>addprefix[$:/state/dynannotate/temp-save-title/]] }}}
+	annotate-tiddler=<<currentTiddler>>
+	annotate-text=<<text>>
+	annotate-prefix=<<prefix>>
+	annotate-suffix=<<suffix>>
+	annotate-colour=<<colour>>
+/>
+<$set name="popup-coords" value={{{ [<currentTiddler>addprefix[$:/state/dynannotate/popup-selection/]get[text]] }}}>
+<$action-deletetiddler $tiddler={{{ [<currentTiddler>addprefix[$:/state/dynannotate/popup-selection/]] }}}/>
+<$action-setfield $tiddler="$:/temp/dynannotate/demo/annotation-title" $value={{{ [<currentTiddler>addprefix[$:/state/dynannotate/temp-save-title/]get[text]] }}}/>
+<$action-popup $state={{{ [<currentTiddler>addprefix[$:/state/dynannotate/popup-annotation/]] }}} $coords=<<popup-coords>>/> !
+</$set>
+\end
+
+<$reveal tag="div" class="tc-tiddler-body" type="nomatch" stateTitle=<<folded-state>> text="hide" retain="yes" animate="yes">
+<$list filter="[all[current]!has[plugin-type]!field:hide-body[yes]]">
+<div style="position:relative;"><!-- Needed for the popups to work -->
+<$dynannotate
+	filter="[all[shadows+tiddlers]!has[draft.of]annotate-tiddler<currentTiddler>!annotate-hide[yes]]"
+	actions=<<click-annotation-actions>>
+	popup={{{ [<currentTiddler>addprefix[$:/state/dynannotate/popup-annotation/]] }}}
+	selection={{{ [<currentTiddler>addprefix[$:/state/dynannotate/selection/]] }}}
+	selectionPrefix={{{ [<currentTiddler>addprefix[$:/state/dynannotate/selection-prefix/]] }}}
+	selectionSuffix={{{ [<currentTiddler>addprefix[$:/state/dynannotate/selection-suffix/]] }}}
+	selectionPopup={{{ [<currentTiddler>addprefix[$:/state/dynannotate/popup-selection/]] }}}
+	search={{$:/temp/search}}
+	searchClass="tc-dynannotation-search-overlay-blurred"
+	searchMinLength={{$:/config/Search/MinLength}}
+>
+<$transclude mode="block">
+<$transclude tiddler="$:/language/MissingTiddler/Hint"/>
+</$transclude>
+</$dynannotate>
+<$vars stateTiddler={{{ [<currentTiddler>addprefix[$:/state/dynannotate/popup-annotation/]] }}}
+currentDocument=<<currentTiddler>>
+>
+<$reveal type="popup" state=<<stateTiddler>> position="belowright" animate="yes" retain="yes" style="overflow-y:hidden;">
+<div class="tc-drop-down-wrapper">
+<div class="tc-drop-down tc-popup-keep dyna-pop" style="white-space: normal;overflow-y:hidden;">
+<$tiddler tiddler={{$:/temp/dynannotate/demo/annotation-title}}>
+<p>
+<h3>Annotation Tiddler</h3>
+
+<$link><$view field="title"/></$link><br/>
+
+<$edit-text size="100%" minHeight="100px" class="dyna-edit"/>
+
+<$button class="dyna-color-button">Copy annotated text to annotation.
+<$action-setfield text={{{ [{!!text}addsuffix{!!annotate-text}] }}} />
+</$button><br/>
+<!-- FIND -->
+<$list filter="[list[$:/plugins/MAS/DynaNotator/config/tags!!text]]" variable="tagname">
+<$checkbox tag=<<tagname>>> <$text text=<<tagname>>/></$checkbox>
+</$list>
+</p>
+<p>
+<$reveal type="nomatch" state="$:/state/ShowLongColor" text="show" >
+<p style="padding: unset;">
+<$button set="$:/state/ShowLongColor" setTo="show" class="dyna-color-button">Show Long Colour List</$button>
+<div class="tc-colour-chooser">
+<$macrocall $name="colour-picker-recent" actions="""<$action-setfield $field="annotate-colour" $value=<<colour-picker-value>>/>"""/>
+</div>
+</p>
+</$reveal>
+<$reveal type="match" state="$:/state/ShowLongColor" text="show">
+
+<$button set="$:/state/ShowLongColor" setTo="hide">Hide Long Colour List</$button>
+
+Annotation Colors:
+<$macrocall $name='colour-picker' actions="""<$action-setfield $field="annotate-colour" $value=<<colour-picker-value>>/>"""/>
+
+</$reveal>
+<!-- FIND -->
+<$button class="dyna-color-button">Close
+<$action-deletetiddler $tiddler=<<stateTiddler>>/>
+</$button> <$button class="dyna-color-button">Remove
+<$action-deletetiddler $tiddler=<<currentTiddler>>/>
+<$action-deletetiddler $tiddler=<<stateTiddler>>/>
+</$button> <$button class="dyna-color-button">Hide
+<$action-setfield $tiddler=<<currentTiddler>> annotate-hide="yes"/>
+<$action-deletetiddler $tiddler=<<stateTiddler>>/>
+</$button> <$button class="dyna-color-button">Hide All
+<$list filter="[all[shadows+tiddlers]!has[draft.of]annotate-tiddler<currentDocument>]" >
+<$action-setfield $tiddler=<<currentTiddler>> annotate-hide="yes"/>
+</$list>
+<$action-deletetiddler $tiddler=<<stateTiddler>>/>
+</$button>
+</p>
+</$tiddler>
+</div>
+</div>
+</$reveal>
+
+</$vars>
+<$vars popStateTiddler={{{ [<currentTiddler>addprefix[$:/state/dynannotate/popup-selection/]] }}}>
+<$reveal type="popup" state=<<popStateTiddler>> position="belowright" animate="yes" retain="yes" style="overflow-y:hidden;">
+<div class="tc-drop-down-wrapper">
+<div class="tc-drop-down tc-popup-keep dyna-pop" style="white-space:normal;">
+<$vars
+	text={{{ [<currentTiddler>addprefix[$:/state/dynannotate/selection/]get[text]] }}}
+	prefix={{{ [<currentTiddler>addprefix[$:/state/dynannotate/selection-prefix/]get[text]] }}}
+	suffix={{{ [<currentTiddler>addprefix[$:/state/dynannotate/selection-suffix/]get[text]] }}}
+	colour={{{ [<currentTiddler>addprefix[$:/state/dynannotate/annotation-colour/]get[text]] }}}
+>
+<$button actions=<<create-annotation-actions>>>
+Create annotation
+</$button>
+<p>
+Text: <$text text=<<text>>/>
+</p>
+<p>
+Prefix: <$text text=<<prefix>>/>
+</p>
+<p>
+Suffix: <$text text=<<suffix>>/>
+</p>
+<$button>
+Close
+<$action-deletetiddler $tiddler=<<popStateTiddler>>/>
+</$button>
+<$button>
+Unhide Hidden
+<$list filter="[annotate-tiddler<currentTiddler>annotate-hide[yes]]">
+<$action-setfield annotate-hide="no"/>
+<$action-deletetiddler $tiddler=<<popStateTiddler>>/>
+</$list>
+</$button>
+</$vars>
+</div>
+</div>
+</$reveal>
+</$vars>
+</div>
+</$list>
+
+</$reveal>
+

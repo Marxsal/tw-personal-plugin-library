@@ -1,0 +1,13 @@
+{
+    "title": "$:/plugins/MAS/DynaNotator",
+    "name": "Dynanote Notations",
+    "description": "Add notations to rendered tiddlers simply by selecting text",
+    "author": "MAS",
+    "version": "0.0.4",
+    "core-version": ">=5.2.1",
+    "source": "",
+    "list": "readme history",
+    "dependents": "[[$:/plugins/tiddlywiki/dynannotate]]",
+    "parent-plugin": "",
+    "plugin-type": "plugin"
+}

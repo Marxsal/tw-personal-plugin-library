@@ -1,0 +1,19 @@
+created: 20220208035708002
+modified: 20220306204612364
+tags: $:/tags/Stylesheet
+title: $:/plugins/mas/dynanotator/config/styles
+
+textarea.dyna-edit {
+width: 100% ;
+}
+button.dyna-color-button {
+width: fit-content ;
+display: inline ;
+padding-left: 0.2em ;
+padding-right: 0.2em ;
+}
+
+div.tc-drop-down-wrapper > div.dyna-pop {
+max-width: 450px ;
+min-width: 380px ;
+}
