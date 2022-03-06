@@ -14,6 +14,21 @@
         "requires-reload": "yes"
     },
     {
+        "title": "$:/plugins/bj/closedlist",
+        "description": "view and edit subtiddlers lists",
+        "author": "JeffreyWilkinson aka bj",
+        "tags": "$:/plugins/bj/typestemplate $:/plugins/bj/visualeditor",
+        "version": "1.17.12",
+        "list": "license readme",
+        "core-version": ">=5.1.17",
+        "source": "https://github.com/buggyj/TW5-other",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "Enables tiddlers inside plugin type containers to be individually viewed and edited. All contained tiddlers are shown as a list\n\nNeeds the typestemplate plugin.\n\nFor edit, Needs ckeditor with subtiddler extension and multtid tools ($:/plugins/bj/struc)\n\n",
+        "requires-reload": "yes"
+    },
+    {
         "name": "Relink",
         "title": "$:/plugins/flibbles/relink",
         "description": "Flexibility when relinking renamed tiddlers",
