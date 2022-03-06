@@ -39,6 +39,20 @@ var assetList = [
         "requires-reload": "yes"
     },
     {
+        "title": "$:/plugins/bj/typestemplate",
+        "description": "enables user templates for each type",
+        "author": "JeffreyWilkinson",
+        "version": "1.17.1",
+        "list": "readme license",
+        "core-version": ">=5.1.13",
+        "source": "https://github.com/buggyj/TW5-tools",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "This plugin enables the use of custom designed view and edit templates. A field can be chosen by the user whose contents with be used to pick a template. Configuration tiddlers, based on the content of the chosen field, are used to locate the templates. \n\nThe default field is 'type', this enables the user to setup edit and view templates for each type - defaults to non-plugin behavior.\n\nExample: if a tiddler is given the type 'test' then the templates for test can be specified by these config tiddlers: \n\n[[$:/config/EditTemplateTypeMappings/test]]\n\nand\n\n[[$:/config/ViewTemplateTypeMappings/test]]\n\nie the pattern is \n\n```\n$:/config/EditTemplateTypeMappings/ + value of type field\n$:/config/ViewTemplateTypeMappings/ + value of type field\n```\n\nThe field used as the key for the template choosings can be put the name of the field to base types upon in the tiddlers\n\n$:/bj/config/typestemplate/callViewPicker\n\n\n$:/bj/config/typestemplate/callEditPicker\n\n",
+        "requires-reload": "yes"
+    },
+    {
         "name": "Relink",
         "title": "$:/plugins/flibbles/relink",
         "description": "Flexibility when relinking renamed tiddlers",
