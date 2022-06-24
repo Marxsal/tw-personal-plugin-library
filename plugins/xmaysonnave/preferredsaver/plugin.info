@@ -1,0 +1,13 @@
+{
+    "title": "$:/plugins/xmaysonnave/PreferredSaver",
+    "name": "Preferred saver",
+    "description": "Additonal options when saving",
+    "author": "xmaysonnave",
+    "version": "0.0.1",
+    "core-version": ">=5.2.0",
+    "source": "",
+    "list": "",
+    "dependents": "",
+    "parent-plugin": "",
+    "plugin-type": "plugin"
+}
