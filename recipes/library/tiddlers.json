@@ -101,5 +101,20 @@
         "type": "application/json",
         "readme": "This plugin provides a simple checklist which does not create a new tiddler for\neach task. Features include:\n\n[x] Check and uncheck items\n[x] Simple, no configuration necessary\n[x] Easily editable, and easy to read in edit view\n[x] Add new list items without using edit mode\n[x] Move completed items to bottom of list\n\n[[Source code|https://github.com/tgrosinger/tw5-checklist]]\n",
         "requires-reload": "yes"
+    },
+    {
+        "title": "$:/plugins/xmaysonnave/PreferredSaver",
+        "name": "Preferred saver",
+        "description": "Additonal options when saving",
+        "author": "xmaysonnave",
+        "version": "0.0.1",
+        "core-version": ">=5.2.0",
+        "source": "",
+        "list": "",
+        "dependents": "",
+        "parent-plugin": "",
+        "plugin-type": "plugin",
+        "type": "application/json",
+        "requires-reload": "yes"
     }
 ]
