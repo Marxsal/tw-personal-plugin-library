@@ -1,0 +1,20 @@
+created: 20220919033842776
+modified: 20220919035234295
+tags: 
+title: $:/plugins/mas/regexps/readme
+type: text/vnd.tiddlywiki
+
+
+"Regular expressions" are concise strings of characters that denote patterns of text to search for. The format used in ~TiddlyWiki is fully defined in [[this Mozilla reference|https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions]].
+
+This filter takes a title list as input, and then applies the specified regular expression. This means each title can return more than one output "title". This can be useful for splitting a date, for instance, into its component parts. Or finding all the words in a title that starts with a capital case.
+
+The [[filter syntax|https://tiddlywiki.com/#Filter%20Run]] makes it impossible to directly specify a regular expression that contains square brackets. But regular expressions frequently require square brackets. The solution is to store the expression in a variable. 
+
+The regular expression parameter  can optionally start with one or more flag characters: "i", "m", or "g" enclosed in parentheses and preceded by a question mark (e.g. `(?gi)` ) 
+
+The `i` flag is is used to ignore differences between capital and lowercase letters. The `m` flag is not generally useful.
+
+The `g` flag is used to determine if all matches of the regular expression will be returned. If sub-groups are used (indicated by paired `(` and `)` symbols) they will be ignored if the `g` flag is used. If the `g` flag is not used, then all matching sub-groups will be returned. If the `g` flag is not used and sub-groups are not used, then just the first match will be returned.
+
+
